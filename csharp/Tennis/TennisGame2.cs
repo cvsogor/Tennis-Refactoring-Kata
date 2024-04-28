@@ -23,19 +23,22 @@ namespace Tennis
 
             if (P1Point == P2Point) 
             {
-                if (P1Point < 3) 
+                if (P1Point > 2)
+                {
+                    score = "Deuce";
+                }
+                else 
                 {
                     if (P1Point == 0)
                         score = "Love";
+
                     if (P1Point == 1)
                         score = "Fifteen";
+
                     if (P1Point == 2)
                         score = "Thirty";
+
                     score += "-All";
-                }
-                if (P1Point > 2) 
-                {
-                    score = "Deuce";
                 }
             }
             //-----------------------------------------
