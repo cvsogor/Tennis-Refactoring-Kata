@@ -21,20 +21,25 @@ namespace Tennis
         {
             var score = "";
 
-            if ((P1Point == P2Point) && (P1Point < 3))
+            if (P1Point == P2Point) 
             {
-                if (P1Point == 0)
-                    score = "Love";
-                if (P1Point == 1)
-                    score = "Fifteen";
-                if (P1Point == 2)
-                    score = "Thirty";
-                score += "-All";
+                if (P1Point < 3) 
+                {
+                    if (P1Point == 0)
+                        score = "Love";
+                    if (P1Point == 1)
+                        score = "Fifteen";
+                    if (P1Point == 2)
+                        score = "Thirty";
+                    score += "-All";
+                }
+                if (P1Point > 2) 
+                {
+                    score = "Deuce";
+                }
             }
             //-----------------------------------------
-            if ((P1Point == P2Point) && (P1Point > 2))
-                score = "Deuce";
-            //-----------------------------------------
+
             if ((P1Point > 0) && (P2Point == 0))
             {
                 if (P1Point == 1)
