@@ -105,38 +105,38 @@ namespace Tennis
             return score;
         }
 
-        public void SetP1Score(int number)
-        {
-            for (int i = 0; i < number; i++)
-            {
-                P1Score();
-            }
-        }
+        //public void SetP1Score(int number)
+        //{
+        //    for (int i = 0; i < number; i++)
+        //    {
+        //        P1Score();
+        //    }
+        //}
 
-        public void SetP2Score(int number)
-        {
-            for (var i = 0; i < number; i++)
-            {
-                P2Score();
-            }
-        }
+        //public void SetP2Score(int number)
+        //{
+        //    for (var i = 0; i < number; i++)
+        //    {
+        //        P2Score();
+        //    }
+        //}
 
-        private void P1Score()
-        {
-            P1Point++;
-        }
+        //private void P1Score()
+        //{
+        //    P1Point++;
+        //}
 
-        private void P2Score()
-        {
-            P2Point++;
-        }
+        //private void P2Score()
+        //{
+        //    P2Point++;
+        //}
 
         public void WonPoint(string player)
         {
             if (player == Player1Name)
-                P1Score();
+                P1Point++;
             else
-                P2Score();
+                P2Point++;
         }
 
     }
