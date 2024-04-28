@@ -2,8 +2,8 @@ namespace Tennis
 {
     public class TennisGame2 : ITennisGame
     {
-        private int P1Point;
-        private int P2Point;
+        private int P1Point = 0;
+        private int P2Point = 0;
 
         private string P1Result = "";
         private string P2Result = "";
@@ -13,7 +13,6 @@ namespace Tennis
 
         public TennisGame2(string player1Name, string player2Name)
         {
-            P1Point = 0;
             this.Player1Name = player1Name;
             this.Player2Name = player2Name;
         }
@@ -21,7 +20,8 @@ namespace Tennis
         public string GetScore()
         {
             var score = "";
-            if (P1Point == P2Point && P1Point < 3)
+
+            if ((P1Point == P2Point) && (P1Point < 3))
             {
                 if (P1Point == 0)
                     score = "Love";
@@ -31,10 +31,11 @@ namespace Tennis
                     score = "Thirty";
                 score += "-All";
             }
-            if (P1Point == P2Point && P1Point > 2)
+            //-----------------------------------------
+            if ((P1Point == P2Point) && (P1Point > 2))
                 score = "Deuce";
-
-            if (P1Point > 0 && P2Point == 0)
+            //-----------------------------------------
+            if ((P1Point > 0) && (P2Point == 0))
             {
                 if (P1Point == 1)
                     P1Result = "Fifteen";
@@ -46,7 +47,8 @@ namespace Tennis
                 P2Result = "Love";
                 score = P1Result + "-" + P2Result;
             }
-            if (P2Point > 0 && P1Point == 0)
+            //-----------------------------------------
+            if ((P2Point > 0) && (P1Point == 0))
             {
                 if (P2Point == 1)
                     P2Result = "Fifteen";
@@ -58,8 +60,8 @@ namespace Tennis
                 P1Result = "Love";
                 score = P1Result + "-" + P2Result;
             }
-
-            if (P1Point > P2Point && P1Point < 4)
+            //-----------------------------------------
+            if ((P1Point > P2Point) && (P1Point < 4))
             {
                 if (P1Point == 2)
                     P1Result = "Thirty";
@@ -71,7 +73,8 @@ namespace Tennis
                     P2Result = "Thirty";
                 score = P1Result + "-" + P2Result;
             }
-            if (P2Point > P1Point && P2Point < 4)
+            //-----------------------------------------
+            if ((P2Point > P1Point) && (P2Point < 4))
             {
                 if (P2Point == 2)
                     P2Result = "Thirty";
@@ -83,22 +86,23 @@ namespace Tennis
                     P1Result = "Thirty";
                 score = P1Result + "-" + P2Result;
             }
-
-            if (P1Point > P2Point && P2Point >= 3)
+            //-----------------------------------------
+            if ((P1Point > P2Point) && (P2Point >= 3))
             {
                 score = "Advantage player1";
             }
-
-            if (P2Point > P1Point && P1Point >= 3)
+            //-----------------------------------------
+            if ((P2Point > P1Point) && (P1Point >= 3))
             {
                 score = "Advantage player2";
             }
-
-            if (P1Point >= 4 && P2Point >= 0 && (P1Point - P2Point) >= 2)
+            //-----------------------------------------
+            if ((P1Point >= 4) && (P2Point >= 0) && ((P1Point - P2Point) >= 2))
             {
                 score = "Win for player1";
             }
-            if (P2Point >= 4 && P1Point >= 0 && (P2Point - P1Point) >= 2)
+            //-----------------------------------------
+            if ((P2Point >= 4) && (P1Point >= 0) && ((P2Point - P1Point) >= 2))
             {
                 score = "Win for player2";
             }
