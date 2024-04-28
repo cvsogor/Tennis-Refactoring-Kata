@@ -5,8 +5,8 @@ namespace Tennis
         private int p1point;
         private int p2point;
 
-        private string p1res = "";
-        private string p2res = "";
+        private string p1result = "";
+        private string p2result = "";
 
         //NOT IN USE - LOOKS LIKE MISTAKE
         //private string player1Name;
@@ -38,51 +38,51 @@ namespace Tennis
             if (p1point > 0 && p2point == 0)
             {
                 if (p1point == 1)
-                    p1res = "Fifteen";
+                    p1result = "Fifteen";
                 if (p1point == 2)
-                    p1res = "Thirty";
+                    p1result = "Thirty";
                 if (p1point == 3)
-                    p1res = "Forty";
+                    p1result = "Forty";
 
-                p2res = "Love";
-                score = p1res + "-" + p2res;
+                p2result = "Love";
+                score = p1result + "-" + p2result;
             }
             if (p2point > 0 && p1point == 0)
             {
                 if (p2point == 1)
-                    p2res = "Fifteen";
+                    p2result = "Fifteen";
                 if (p2point == 2)
-                    p2res = "Thirty";
+                    p2result = "Thirty";
                 if (p2point == 3)
-                    p2res = "Forty";
+                    p2result = "Forty";
 
-                p1res = "Love";
-                score = p1res + "-" + p2res;
+                p1result = "Love";
+                score = p1result + "-" + p2result;
             }
 
             if (p1point > p2point && p1point < 4)
             {
                 if (p1point == 2)
-                    p1res = "Thirty";
+                    p1result = "Thirty";
                 if (p1point == 3)
-                    p1res = "Forty";
+                    p1result = "Forty";
                 if (p2point == 1)
-                    p2res = "Fifteen";
+                    p2result = "Fifteen";
                 if (p2point == 2)
-                    p2res = "Thirty";
-                score = p1res + "-" + p2res;
+                    p2result = "Thirty";
+                score = p1result + "-" + p2result;
             }
             if (p2point > p1point && p2point < 4)
             {
                 if (p2point == 2)
-                    p2res = "Thirty";
+                    p2result = "Thirty";
                 if (p2point == 3)
-                    p2res = "Forty";
+                    p2result = "Forty";
                 if (p1point == 1)
-                    p1res = "Fifteen";
+                    p1result = "Fifteen";
                 if (p1point == 2)
-                    p1res = "Thirty";
-                score = p1res + "-" + p2res;
+                    p1result = "Thirty";
+                score = p1result + "-" + p2result;
             }
 
             if (p1point > p2point && p2point >= 3)
