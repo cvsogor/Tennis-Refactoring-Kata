@@ -8,15 +8,14 @@ namespace Tennis
         private string p1result = "";
         private string p2result = "";
 
-        //NOT IN USE - LOOKS LIKE MISTAKE
-        //private string player1Name;
-        //private string player2Name;
+        private string player1Name;
+        private string player2Name;
 
         public TennisGame2(string player1Name, string player2Name)
         {
             p1point = 0;
-            //this.player1Name = player1Name;
-            //this.player2Name = player2Name;
+            this.player1Name = player1Name;
+            this.player2Name = player2Name;
         }
 
         public string GetScore()
@@ -134,7 +133,7 @@ namespace Tennis
 
         public void WonPoint(string player)
         {
-            if (player == "player1")
+            if (player == player1Name)
                 P1Score();
             else
                 P2Score();
