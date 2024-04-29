@@ -1,3 +1,5 @@
+using static System.Formats.Asn1.AsnWriter;
+
 namespace Tennis
 {
     public class TennisGame2 : ITennisGame
@@ -16,7 +18,21 @@ namespace Tennis
             this.Player1Name = player1Name;
             this.Player2Name = player2Name;
         }
+        private void ScoreMoreAndZero(int p1point, int p2point, ref string score, ref string p1result, ref string p2result)
+        {
+            if ((p1point > 0) && (p2point == 0))
+            {
+                if (p1point == 1)
+                    p1result = "Fifteen";
+                if (p1point == 2)
+                    p1result = "Thirty";
+                if (p1point == 3)
+                    p1result = "Forty";
 
+                p2result = "Love";
+                score = p1result + "-" + p2result;
+            }
+        }
         public string GetScore()
         {
             var score = "";
@@ -42,32 +58,9 @@ namespace Tennis
                 }
             }
             //-----------------------------------------
-
-            if ((P1Point > 0) && (P2Point == 0))
-            {
-                if (P1Point == 1)
-                    P1Result = "Fifteen";
-                if (P1Point == 2)
-                    P1Result = "Thirty";
-                if (P1Point == 3)
-                    P1Result = "Forty";
-
-                P2Result = "Love";
-                score = P1Result + "-" + P2Result;
-            }
-            //-----------------------------------------
-            if ((P2Point > 0) && (P1Point == 0))
-            {
-                if (P2Point == 1)
-                    P2Result = "Fifteen";
-                if (P2Point == 2)
-                    P2Result = "Thirty";
-                if (P2Point == 3)
-                    P2Result = "Forty";
-
-                P1Result = "Love";
-                score = P1Result + "-" + P2Result;
-            }
+            ScoreMoreAndZero(P1Point, P2Point, ref  score, ref  P1Result, ref  P2Result);
+            ScoreMoreAndZero(P2Point, P1Point, ref score, ref P2Result, ref P1Result);
+            
             //-----------------------------------------
             if ((P1Point > P2Point) && (P1Point < 4))
             {
