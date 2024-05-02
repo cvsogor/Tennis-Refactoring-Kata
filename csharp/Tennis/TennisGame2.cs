@@ -22,6 +22,14 @@ namespace Tennis
         {
             if ((player1point > 0) && (player2point == 0))
             {
+                //SOMETHING WRONG WITH SYNTAX OR .NET VERSION
+                //player1result = player1point switch
+                //{
+                //    1 => "Fifteen",
+                //    2 => "Thirty",
+                //    3 => "Forty"
+                //};
+
                 if (player1point == 1)
                     player1result = "Fifteen";
                 if (player1point == 2)
